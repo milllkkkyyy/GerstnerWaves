@@ -1,0 +1,36 @@
+[gd_resource type="PlaneMesh" load_steps=5 format=2]
+
+[ext_resource path="res://Waves.shader" type="Shader" id=1]
+
+[sub_resource type="OpenSimplexNoise" id=2]
+
+[sub_resource type="NoiseTexture" id=3]
+seamless = true
+noise = SubResource( 2 )
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 1 )
+shader_param/speed = 0.02
+shader_param/time = null
+shader_param/wave_a = Plane( -1, 5, 0.4, 10 )
+shader_param/wave_b = Plane( -4, -2, 0.2, 70 )
+shader_param/wave_c = Plane( -1, 0, 0.1, 50 )
+shader_param/wave_d = Plane( 5, -1, 0.2, 100 )
+shader_param/wave_e = Plane( 1, 1, 0.1, 20 )
+shader_param/foam_level = 0.4
+shader_param/peak_color = Color( 0.847059, 0.847059, 0.847059, 1 )
+shader_param/water_color = Color( 0.321569, 0.564706, 0.72549, 1 )
+shader_param/deep_water_color = Color( 0.137255, 0.25098, 0.494118, 1 )
+shader_param/beer_law_factor = 0.2
+shader_param/_distance = 1.0
+shader_param/edge_color = Color( 1, 1, 1, 1 )
+shader_param/edge_scale = 0.25
+shader_param/near = 0.1
+shader_param/far = 100.0
+shader_param/noise = SubResource( 3 )
+
+[resource]
+material = SubResource( 1 )
+size = Vector2( 1000, 1001 )
+subdivide_width = 100
+subdivide_depth = 100
